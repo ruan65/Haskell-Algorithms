@@ -10,4 +10,9 @@ insert :: Ord a => a -> [a] -> [a]
 insert x [] = [x]
 insert e (x:xs)
             | e <= x = e : x : xs
-            | e > x = x : insert e xs 
+            | e > x = x : insert e xs
+
+zip2lists :: [a] -> [b] -> [(a,b)]
+zip2lists _ [] = []
+zip2lists [] _ = []
+zip2lists (x:xs) (y:ys) = (x,y) : zip2lists xs ys
